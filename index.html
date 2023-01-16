@@ -60,6 +60,14 @@
       </select>
     </p>
 
+    <script>
+      document.getElementById("cbPais").addEventListener("change", function(){
+    if(this.value === "Selecione uma cidade"){
+        alert("Por favor, selecione uma cidade válida");
+      }
+    });
+    </script>
+
       <!--<select id="cbPais" required="required">
         <option disabled selected>Selecione um item</option>
         <option>Sobradinho</option>
