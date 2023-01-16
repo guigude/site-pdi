@@ -71,9 +71,9 @@
               }
           }
           if (isValid) {
-              alert('Dados salvos com sucesso!');
+              document.getElementById("validation-message").innerHTML = "Dados salvos com sucesso!";
           } else {
-              alert('Por favor, preencha todos os campos obrigatórios.');
+              document.getElementById("validation-message").innerHTML = "Por favor, preencha todos os campos obrigatórios.";
           }
       }
   </script>
