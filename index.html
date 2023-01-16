@@ -73,11 +73,22 @@
     function validateForm() {
         var inputs = document.querySelectorAll("input[required]");
         var isValid = true;
+        var radioChecked = false;
+        var radios = document.getElementsByName('drone');
         for (var i = 0; i < inputs.length; i++) {
-            if (inputs[i].value == "") {
+            if (inputs[i].value == "" && inputs[i].type != "radio") {
                 isValid = false;
                 break;
             }
+        }
+        for (var i = 0; i < radios.length; i++) {
+            if (radios[i].checked) {
+                radioChecked = true;
+                break;
+            }
+        }
+        if (!radioChecked) {
+            isValid = false;
         }
         if (isValid) {
             document.getElementById("validation-message").innerHTML = "Dados salvos com sucesso!";
@@ -85,7 +96,8 @@
             document.getElementById("validation-message").innerHTML = "Por favor, preencha todos os campos obrigatórios.";
         }
     }
-  </script>
+</script>
+
 
   <script>
     // pega o botão
