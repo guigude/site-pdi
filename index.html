@@ -60,13 +60,31 @@
     </p>
 
 
+    <script>
+      function validateForm() {
+          var inputs = document.querySelectorAll("input[required]");
+          var isValid = true;
+          for (var i = 0; i < inputs.length; i++) {
+              if (inputs[i].value == "") {
+                  isValid = false;
+                  break;
+              }
+          }
+          if (isValid) {
+              alert('Dados salvos com sucesso!');
+          } else {
+              alert('Por favor, preencha todos os campos obrigatórios.');
+          }
+      }
+  </script>
+
     <label for="username">Nome de usuário:</label>
     <input type="text" id="username" required="required" name="username">
     <br>
     <label for="nickname">Apelido:</label>
     <input type="text" id="nickname" required="required" name="nickname">
     <br><br>
-    <input type="submit" value="Salvar" id="save-button">
+    <input type="submit" value="Salvar" id="save-button" onclick="validateForm()">
   </form>
 
   <script>
