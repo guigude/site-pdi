@@ -1,0 +1,16 @@
+p {
+    
+}
+
+body {
+    background: #CCCCCC;
+}
+
+strong {
+    color: crimson;
+}
+
+.aviso {
+    color: darkred;
+    font-weight: bold;
+}

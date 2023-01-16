@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset=”UTF8”>
+  <title>Automatização</title>
+  <link rel="stylesheet" href="style.css">
+  <script type="text/javascript" src="site.js"></script>
+
+</head>
+
+<body>
+  <h1 style="text-align: center;">Academia</h1>
+
+  <p>Neste site você podera se cadastrar na academia para melhorar sua saude. <strong>Sempre é valido ter um bom
+      profissional te acompanhando nos treinos.</strong> Mas não esqueça, dedique um tempo a si mesmo e tambem a sua
+    familia.</p>
+
+  <p><em>Se dedique bastante ao alto cuidado como exercicios fisicos de cunho aerobico e de força.</em></p>
+
+  <form id="salvar">
+    <p>
+    <fieldset>
+      <legend>Selecione uma unidade da academia de sua preferência:</legend>
+
+      <div>
+        <input type="radio" id="unidadeUm" required="required" name="drone" value="unidadeUm">
+        <label for="unidadeUm">Unidade um</label>
+      </div>
+
+      <div>
+        <input type="radio" id="unidadeDois" required="required" name="drone" value="unidadeDois">
+        <label for="unidadeDois">Unidade dois</label>
+      </div>
+
+      <div>
+        <input type="radio" id="unidadeTrês" required="required" name="drone" value="unidadeTrês">
+        <label for="unidadeTrês">Unidade três</label>
+      </div>
+
+      <div>
+        <input type="radio" id="unidadeQuatro" required="required" name="drone" value="unidadeQuatro">
+        <label for="unidadeQuatro">Unidade quatro</label>
+      </div>
+
+      <div>
+        <input type="radio" id="unidadeCinco" required="required" name="drone" value="unidadeCinco">
+        <label for="unidadeCinco">Unidade cinco</label>
+      </div>
+    </fieldset>
+    </p>
+
+    <p style="text-align: center;">
+      <legend style="margin: 1rem;">Abaixo escolha sua cidade:</legend>
+
+      <select id="cbPais" required="required">
+        <option disabled selected>Selecione um item</option>
+        <option>Sobradinho</option>
+        <option>Ceilandia</option>
+        <option>São Cebastião</option>
+      </select>
+    </p>
+
+    <!--<p>
+    <fieldset>
+
+      <p><strong>Qual são os três exercicios que você mais gosta? (Você deve escolher 3 opções)</strong></p>
+      
+        <input type="checkbox" name="check[]" value="CheckBox 1" />Supino reto<br>
+        <input type="checkbox" name="check[]" value="CheckBox 2" />Agachamento sumô<br>
+        <input type="checkbox" name="check[]" value="CheckBox 3" />Rosca na barra<br>
+        <input type="checkbox" name="check[]" value="CheckBox 4" />Rosca com halter<br>
+        <input type="checkbox" name="check[]" value="CheckBox 5" />Leg press<br>
+        <input type="checkbox" name="check[]" value="CheckBox 6" />Panturrilha no burrinho<br>
+
+      <script type="text/javascript">checkBoxLimit()</script>
+    </fieldset>
+    </p> -->
+
+
+    <label for="username">Nome de usuário:</label>
+    <input type="text" id="username" required="required" name="username">
+    <br>
+    <label for="nickname">Apelido:</label>
+    <input type="text" id="nickname" required="required" name="nickname">
+    <br><br>
+    <input type="submit" value="Salvar" id="save-button">
+  </form>
+
+  <script>
+    // pega o botão
+    var saveButton = document.getElementById("salvar");
+    // adiciona o evento de clique
+    saveButton.addEventListener("submit", function (e) {
+      e.stopPropagation();
+      e.preventDefault();
+      // pega o valor dos campos de entrada
+      var username = document.getElementById("username").value;
+      var nickname = document.getElementById("nickname").value;
+      // imprime as informações no console
+      console.log("Nome de usuário: " + username);
+      console.log("Nickname: " + nickname);
+      
+      // pega o valor selecionado no campo de seleção de cidade
+      var city = document.getElementById("cbPais").value;
+      // imprime as informações no console
+      console.log("Cidade selecionada: " + city);
+      // pega o valor selecionado no campo de rádio de unidade de academia
+      var radioButtons = document.getElementsByName("drone");
+      var selectedRadio;
+      // percorre todos os botões de rádio
+      for (var i = 0; i < radioButtons.length; i++) {
+        // verifica se o botão de rádio está marcado
+        if (radioButtons[i].checked) {
+          // armazena o valor do botão de rádio selecionado
+          selectedRadio = radioButtons[i].value;
+          break;
+        }
+      }
+      // imprime as informações selecionadas no console
+      console.log("Unidade de academia selecionada: " + selectedRadio);
+    });
+  </script>
+
+
+
+
+
+
+
+</body>
+
+
+</html>
