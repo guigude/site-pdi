@@ -52,21 +52,13 @@
 
     <p style="text-align: center;">
       <legend style="margin: 1rem;">Abaixo escolha sua cidade:</legend>
-      <select id="cbPais" required="required">
-        <option disabled selected>Selecione uma cidade</option>
+      <select id="cbPais">
         <option>Sobradinho</option>
         <option>Ceilandia</option>
         <option>São Cebastião</option>
       </select>
     </p>
 
-    <script>
-      document.getElementById("cbPais").addEventListener("change", function(){
-    if(this.value === "Selecione uma cidade"){
-        alert("Por favor, selecione uma cidade válida");
-      }
-    });
-    </script>
 
       <!--<select id="cbPais" required="required">
         <option disabled selected>Selecione um item</option>
